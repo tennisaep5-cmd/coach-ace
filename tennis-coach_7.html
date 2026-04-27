@@ -600,7 +600,7 @@ FOLLOW_UP_QUESTIONS:
 - [Related area]
 - [Challenge them]`;
 
-const FREE_LIMIT = 3;
+const FREE_LIMIT = 10;
 let attachedFiles = [], busy = false;
 window._history = window._history || [];
 
@@ -635,7 +635,7 @@ function updateUsageUI() {
     pill.className='plan-pill free'; pill.textContent='✓ Free';
     wrap.style.display='block'; hdrBtn.classList.remove('hidden');
     const pct = Math.min((u.count/FREE_LIMIT)*100,100);
-    document.getElementById('usage-text').textContent=`${u.count} / ${FREE_LIMIT} today`;
+    document.getElementById('usage-text').textContent=`${u.count} / ${FREE_LIMIT} today`
     const fill=document.getElementById('usage-fill');
     fill.style.width=pct+'%';
     fill.className='usage-fill'+(pct>=100?' full':pct>=66?' warn':'');
